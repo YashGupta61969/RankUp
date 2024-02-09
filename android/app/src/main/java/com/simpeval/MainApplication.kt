@@ -1,4 +1,4 @@
-package com.simpeval
+package com.RankUp
 
 import android.app.Application
 import com.facebook.react.PackageList
