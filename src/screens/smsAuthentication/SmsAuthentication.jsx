@@ -120,7 +120,7 @@ const SmsAuthentication = ({navigation, route}) => {
     <View
       style={[
         smsAuthenticationStyle.smsAuthenticationMain,
-        {backgroundColor: colors.background},
+
       ]}>
       <ChildStackHeader
         text={accountRoutes.SMSAuthentication}

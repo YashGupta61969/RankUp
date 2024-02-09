@@ -27,16 +27,16 @@ const LogoutModal = ({open, closeModal}) => {
       setLoading(true);
       const {data} = await logout();
       console.log('data', data);
-      if (data.detail === 'Logout successful') {
+      if (data) {
         dispatch(authToken(null));
         await AsyncStorage.clear();
       }
-      navigation.dispatch(
-        CommonActions.reset({
-          index: 0,
-          routes: [{ name: 'BottomStack' }],
-        })
-      );
+      // navigation.dispatch(
+      //   CommonActions.reset({
+      //     index: 0,
+      //     routes: [{ name: 'BottomStack' }],
+      //   })
+      // );
       // dispatch(switchResponse(false));
       // dispatch(setIsEnabled(false));
       setLoading(false);

@@ -61,7 +61,7 @@ const EPR = ({navigation}) => {
         return;
       }
 
-      setLoading(true);
+      // setLoading(true);
       const requiredData = {
         action: action,
         impact: impact,
@@ -91,7 +91,7 @@ const EPR = ({navigation}) => {
       <ScrollView
         automaticallyAdjustKeyboardInsets={true}
         showsVerticalScrollIndicator={false}>
-        <Loader loading={loading} />
+        {/* <Loader loading={loading} /> */}
         <View
           style={[
             eprStyle.titleView,
@@ -241,11 +241,11 @@ const EPR = ({navigation}) => {
           <CheckBox
             boxType="square"
             style={{width: 20, height: 20}}
-            onCheckColor={color.white}
+            onCheckColor={color.black}
             onFillColor={color.white}
             value={checked}
             onValueChange={() => setChecked(!checked)}
-            tintColors={{true: color.white, false: color.white}}
+            tintColors={{true: color.black, false: color.black}}
           />
           <Text style={eprStyle.confirmationText}>
             No CUI for classified information allowed

@@ -31,7 +31,7 @@ const Narratives = ({navigation}) => {
     {id: 2, value: 'EPB'},
   ];
 
-  console.log('seireioruoperp', selectedBullets);
+
 
   const dutyTitleArray = [
     {
@@ -162,7 +162,7 @@ const Narratives = ({navigation}) => {
 
         {dutyTitleArray.map((item, index) => {
           return (
-            <TouchableOpacity
+            <View
               onPress={() => navigation.navigate(narrativesRoutes.OPB)}
               key={index}
               style={narrativesStyle.dutyTitleWrapper}>
@@ -183,7 +183,7 @@ const Narratives = ({navigation}) => {
               <Text style={narrativesStyle.dutyTitleDescription}>
                 {item.value}
               </Text>
-            </TouchableOpacity>
+            </View>
           );
         })}
         {narrativeButtonText === 'delete' ? (

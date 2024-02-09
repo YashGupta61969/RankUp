@@ -39,8 +39,8 @@ const Home = ({navigation}) => {
   return (
     <View style={[homeStyle.homeMain, {backgroundColor: color.white}]}>
       <StatusBar barStyle="dark-content" backgroundColor={color.white}/>
-      <Loader loading={loading} />
       <View style={homeStyle.homeHeader}>
+
         <View style={homeStyle.imageMain}>
           <Image
             style={{width: '100%', height: '100%'}}

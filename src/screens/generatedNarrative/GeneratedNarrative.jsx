@@ -10,7 +10,7 @@ import {color} from '../../constants/colors';
 import {showModal} from '@whitespectre/rn-modal-presenter';
 import {submitEpr} from '../../data/services/api/militaryBulletsApi';
 import GradientButton from '../../components/buttons/GradientButton';
-// import Loader from '../../components/loader/Loader';
+
 import {toast} from '../../utils/toast';
 import {verticalScale} from '../../constants/dimension';
 import CancelButton from '../../components/buttons/CancelButton';
@@ -40,10 +40,10 @@ const GeneratedNarrative = ({route, navigation}) => {
   //     api_response: route.params.data.message,
   //   };
   //   try {
-  //     setLoading(true);
+
   //     await submitEpr(requiredEprData);
   //     showModal(OprUdate, {navigation,colors,routeName});
-  //     setLoading(false);
+
   //   } catch (error) {
   //     setLoading(false);
   //     toast({type: 'error', text1: error.response.data.detail});
@@ -67,87 +67,90 @@ const GeneratedNarrative = ({route, navigation}) => {
   // };
 
   return (
-    <View
-      style={[
-        generatedNarrativeStyle.generatedBulletMain,
-        {backgroundColor: color.white},
-      ]}>
-      <ChildStackHeader
-        text={homeRoutes.GeneratedNarrative}
-        textColor={color.lightBlack}
-      />
-      <ScrollView showsVerticalScrollIndicator={false}>
-        {/* <Loader loading={loading} /> */}
+    // <View
+    //   style={[
+    //     generatedNarrativeStyle.generatedBulletMain,
+    //     {backgroundColor: color.white},
+    //   ]}>
+    //   <ChildStackHeader
+    //     text={homeRoutes.GeneratedNarrative}
+    //     textColor={color.lightBlack}
+    //   />
+    //   <ScrollView showsVerticalScrollIndicator={false}>
 
-        <View style={{marginTop: verticalScale(18)}}>
-          <Text
-            style={[
-              generatedNarrativeStyle.bulletsTextDescription,
-              {color: colors.text},
-            ]}>
-            Choose the most appropriate bullet option below.{'\n'}(Press for 2
-            seconds to choose multiple bullets)
-          </Text>
-        </View>
 
-        <View
-          style={[
-            generatedNarrativeStyle.bulletOptionsView,
-            {
-              backgroundColor: colors.screenCard,
-              borderColor: colors.cardBorder,
-            },
-          ]}>
-          {/* {bulletArray.map((item, index) => {
-            return (
-              <View
-                key={index}
-                style={[
-                  generatedNarrativeStyle.bulletOptions,
-                  {borderColor: colors.cardBorder},
-                ]}>
-                <View
-                  style={[
-                    generatedNarrativeStyle.bulletOptionInner,
-                    {
-                      borderColor: color.border,
-                      // backgroundColor: selectedBullets.includes(index)
-                      //   ? color.kansas_grain
-                      //   : null,
-                    },
-                    // {backgroundColor: color.blue_brand},
-                  ]}>
-                  <View
-                    style={{flexDirection: 'row', alignItems: 'flex-start'}}>
-                    <View
-                      style={[
-                        generatedNarrativeStyle.dotView,
-                        // {backgroundColor: selectedBullets.includes(index) ? color.black: colors.dotColor},
-                      ]}
-                    />
-                    <Text
-                      style={[
-                        generatedNarrativeStyle.bulletOptionsText,
-                        // {color: selectedBullets.includes(index) ? color.black: colors.text},
-                      ]}>
-                      {item}
-                    </Text>
-                  </View>
-                  <CustomCheckBox
-                  selectedBullets={selectedBullets}
-                  index={index}
-                    //  checked={selectedBullets?.includes(index)}
-                    // onChange={() => handleCheckBoxChange(index, item)}
-                  />
-                </View>
-              </View>
-            );
-          })} */}
-        </View>
+    //     <View style={{marginTop: verticalScale(18)}}>
+    //       <Text
+    //         style={[
+    //           generatedNarrativeStyle.bulletsTextDescription,
+    //           {color: colors.text},
+    //         ]}>
+    //         Choose the most appropriate bullet option below.{'\n'}(Press for 2
+    //         seconds to choose multiple bullets)
+    //       </Text>
+    //     </View>
 
-        <GradientButton text="Save Narrative" action={()=>navigation.navigate(homeRoutes.ViewNarrative)}/>
-        <CancelButton text="Go Back" action={() => navigation.goBack()} />
-      </ScrollView>
+    //     <View
+    //       style={[
+    //         generatedNarrativeStyle.bulletOptionsView,
+    //         {
+    //           backgroundColor: colors.screenCard,
+    //           borderColor: colors.cardBorder,
+    //         },
+    //       ]}>
+    //       {/* {bulletArray.map((item, index) => {
+    //         return (
+    //           <View
+    //             key={index}
+    //             style={[
+    //               generatedNarrativeStyle.bulletOptions,
+    //               {borderColor: colors.cardBorder},
+    //             ]}>
+    //             <View
+    //               style={[
+    //                 generatedNarrativeStyle.bulletOptionInner,
+    //                 {
+    //                   borderColor: color.border,
+    //                   // backgroundColor: selectedBullets.includes(index)
+    //                   //   ? color.kansas_grain
+    //                   //   : null,
+    //                 },
+    //                 // {backgroundColor: color.blue_brand},
+    //               ]}>
+    //               <View
+    //                 style={{flexDirection: 'row', alignItems: 'flex-start'}}>
+    //                 <View
+    //                   style={[
+    //                     generatedNarrativeStyle.dotView,
+    //                     // {backgroundColor: selectedBullets.includes(index) ? color.black: colors.dotColor},
+    //                   ]}
+    //                 />
+    //                 <Text
+    //                   style={[
+    //                     generatedNarrativeStyle.bulletOptionsText,
+    //                     // {color: selectedBullets.includes(index) ? color.black: colors.text},
+    //                   ]}>
+    //                   {item}
+    //                 </Text>
+    //               </View>
+    //               <CustomCheckBox
+    //               selectedBullets={selectedBullets}
+    //               index={index}
+    //                 //  checked={selectedBullets?.includes(index)}
+    //                 // onChange={() => handleCheckBoxChange(index, item)}
+    //               />
+    //             </View>
+    //           </View>
+    //         );
+    //       })} */}
+    //     </View>
+
+    //     <GradientButton text="Save Narrative" action={()=>navigation.navigate(homeRoutes.ViewNarrative)}/>
+    //     <CancelButton text="Go Back" action={() => navigation.goBack()} />
+    //   </ScrollView>
+    // </View>
+    <View style={{alignItems:"center",justifyContent:"center",flex:1}}>
+      <Text>This Screen is Under Developemnt</Text>
     </View>
   );
 };

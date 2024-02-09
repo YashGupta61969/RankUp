@@ -25,9 +25,9 @@ const BottomStack = () => {
           tabBarStyle: {
             height: verticalScale(52),
             borderTopWidth: 0,
-            elevation: 10,
+            elevation: 1,
             shadowColor: color.lightBlack,
-            shadowOpacity: 5,
+            shadowOpacity: 0.3,
             shadowRadius: 5,
           },
         }}>

@@ -43,6 +43,7 @@ const {colors} = useTheme()
               Setup your Two Factor Authentication
             </Text>
           </View>
+          <icons.RightArrow width={18} height={18}/>
           {/* {switchValue === false ? <icons.RightArrow width={18} height={18} />:<icons.RightArrowLight width={22} height={22} />} */}
         </TouchableOpacity>
 
@@ -56,7 +57,9 @@ const {colors} = useTheme()
             </Text>
           </View>
           <View style={settingsStyle.settingRightView}>
-            <CustomSwitchButton  />
+            <CustomSwitchButton  disable={true}/>
+          <icons.RightArrow width={18} height={18}/>
+
             {/* {switchValue === false ? <icons.RightArrow width={18} height={18} />:<icons.RightArrowLight width={22} height={22} />} */}
           </View>
         </TouchableOpacity>
@@ -67,7 +70,9 @@ const {colors} = useTheme()
           </Text>
           
           <View style={settingsStyle.settingRightView}>
-            <CustomSwitchButton  />
+            <CustomSwitchButton disable={true} />
+          <icons.RightArrow width={18} height={18}/>
+
             {/* {switchValue === false ? <icons.RightArrow width={18} height={18} />:<icons.RightArrowLight width={22} height={22} />} */}
           </View>
         </TouchableOpacity>
@@ -81,7 +86,7 @@ const {colors} = useTheme()
               Allow the app to work in the background
             </Text>
           </View>
-          <CustomSwitchButton  />
+          <CustomSwitchButton  disable={true}/>
         </TouchableOpacity>
 
         <TouchableOpacity style={[settingsStyle.settingOption,{borderBottomWidth:0}]}>
@@ -93,7 +98,7 @@ const {colors} = useTheme()
               Allow the app to save your login info
             </Text>
           </View>
-          <CustomSwitchButton  />
+          <CustomSwitchButton  disable={true}/>
         </TouchableOpacity>
       </View>
     </View>

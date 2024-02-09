@@ -3,15 +3,16 @@ import { horizontalScale, moderateScale, verticalScale } from '../../constants/d
 import { fonts } from '../../constants/fonts';
 import { sizes } from '../../constants/fontSize';
 import { RFValue } from 'react-native-responsive-fontsize';
-
+import {color} from "../../constants/colors"
 
 export const cookiesPolicyStyle = StyleSheet.create({
   cookiesMain: {
     flex: 1,
     paddingHorizontal: horizontalScale(17),
     paddingTop: verticalScale(10),
+    backgroundColor:color.white
   },
-  detailWrapper: {
+  detailWrapper: {  
     paddingVertical: verticalScale(10),
     borderWidth: 1,
     paddingHorizontal: horizontalScale(10),

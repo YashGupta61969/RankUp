@@ -173,22 +173,22 @@ const PrivacyPolicies = () => {
     <View
       style={[
         privacyPoliciesStyle.privacyPoliciesMain,
-        {backgroundColor: colors.background},
+ 
       ]}>
       <ChildStackHeader
         text={accountRoutes.PrivacyPolicies}
-        textColor={colors.text}
+        textColor={color.lightBlack}
       />
       <ScrollView
         style={[
           privacyPoliciesStyle.privacyPoliciesPage,
-          {backgroundColor: colors.screenCard, borderColor: colors.cardBorder},
+          {backgroundColor: colors.screenCard, borderColor: color.grey},
         ]}>
-        <Text style={[privacyPoliciesStyle.termsAndConditions,{color:colors.text}]}>
+        <Text style={[privacyPoliciesStyle.termsAndConditions,{color:color.lightBlack}]}>
           Terms and Conditions
         </Text>
-        <Text style={[privacyPoliciesStyle.overViewText,{color:colors.text}]}>Overview</Text>
-        <Text style={[privacyPoliciesStyle.privacyDescription,{color:colors.text}]}>
+        <Text style={[privacyPoliciesStyle.overViewText,{color:color.lightBlack}]}>Overview</Text>
+        <Text style={[privacyPoliciesStyle.privacyDescription,{color:color.lightBlack}]}>
           This document sets forth Total Recall’s privacy notice. It describes
           the types of personal information that we receive in the course of
           doing business, how we use that information, third parties with whom
@@ -204,14 +204,14 @@ const PrivacyPolicies = () => {
         <Text
           style={[
             privacyPoliciesStyle.privacyHeading,
-            {marginVertical: verticalScale(10),color:colors.text},
+            {marginVertical: verticalScale(10),color:color.lightBlack},
           ]}>
           Summary of key points
         </Text>
-        <Text style={[privacyPoliciesStyle.QuestionHeading,{color:colors.text}]}>
+        <Text style={[privacyPoliciesStyle.QuestionHeading,{color:color.lightBlack}]}>
           Which data is gathered by Total Recall?
         </Text>
-        <Text style={[privacyPoliciesStyle.privacyDescription,{color:colors.text}]}>
+        <Text style={[privacyPoliciesStyle.privacyDescription,{color:color.lightBlack}]}>
           In accordance with the specific circumstances surrounding the
           collection of your personal information, our privacy practices will
           differ. {'\n'} Total Recall gathers personal information under the
@@ -224,11 +224,11 @@ const PrivacyPolicies = () => {
         <Text
           style={[
             privacyPoliciesStyle.QuestionHeading,
-            {marginTop: verticalScale(20),color:colors.text},
+            {marginTop: verticalScale(20),color:color.lightBlack},
           ]}>
           Information gathered from clients:
         </Text>
-        <Text style={[privacyPoliciesStyle.privacyDescription,{color:colors.text}]}>
+        <Text style={[privacyPoliciesStyle.privacyDescription,{color:color.lightBlack}]}>
           Total Recall offers a critical event management platform that enables
           our clientele to manage emergencies more effectively. An element of
           this functionality consists of Total Recall's software that empowers
@@ -248,11 +248,11 @@ const PrivacyPolicies = () => {
         <Text
           style={[
             privacyPoliciesStyle.QuestionHeading,
-            {marginTop: verticalScale(20),color:colors.text},
+            {marginTop: verticalScale(20),color:color.lightBlack},
           ]}>
           Information gathered from our websites:
         </Text>
-        <Text style={[privacyPoliciesStyle.privacyDescription,{color:colors.text}]}>
+        <Text style={[privacyPoliciesStyle.privacyDescription,{color:color.lightBlack}]}>
           We may collect, retain, and use the following types of information
           when you visit and use our Websites:
         </Text>
@@ -261,13 +261,13 @@ const PrivacyPolicies = () => {
           return (
             <View key={index} style={privacyPoliciesStyle.dotTextView}>
               <View style={[privacyPoliciesStyle.dot,{backgroundColor:colors.dotColor}]} />
-              <Text style={[privacyPoliciesStyle.privacyDescription,{color:colors.text}]}>
+              <Text style={[privacyPoliciesStyle.privacyDescription,{color:color.lightBlack}]}>
                 {item.value}
               </Text>
             </View>
           );
         })}
-        <Text style={[privacyPoliciesStyle.privacyDescription,{color:colors.text}]}>
+        <Text style={[privacyPoliciesStyle.privacyDescription,{color:color.lightBlack}]}>
           We, like most websites, collect certain information automatically and
           store it in log files. Internet protocol (IP) addresses, browser type,
           internet service provider (ISP), referring/exit pages, operating
@@ -298,11 +298,11 @@ const PrivacyPolicies = () => {
         <Text
           style={[
             privacyPoliciesStyle.QuestionHeading,
-            {marginTop: verticalScale(20),color:colors.text},
+            {marginTop: verticalScale(20),color:color.lightBlack},
           ]}>
           Surveys On our websites:
         </Text>
-        <Text style={[privacyPoliciesStyle.privacyDescription,{color:colors.text}]}>
+        <Text style={[privacyPoliciesStyle.privacyDescription,{color:color.lightBlack}]}>
           We may offer you the chance to participate in surveys. Participation
           will necessitate the provision of specific personal information. As
           participation in these surveys is entirely voluntary, you are thus
@@ -325,11 +325,11 @@ const PrivacyPolicies = () => {
         <Text
           style={[
             privacyPoliciesStyle.QuestionHeading,
-            {marginTop: verticalScale(20),color:colors.text},
+            {marginTop: verticalScale(20),color:color.lightBlack},
           ]}>
           Chatbots:
         </Text>
-        <Text style={[privacyPoliciesStyle.privacyDescription,{color:colors.text}]}>
+        <Text style={[privacyPoliciesStyle.privacyDescription,{color:color.lightBlack}]}>
           Total Recall has incorporated a chatbot into its website to assist
           users in asking general questions and requesting information about our
           products and services. Your interactions with the chatbot are entirely
@@ -343,20 +343,20 @@ const PrivacyPolicies = () => {
           through the chatbot for three main purposes:
         </Text>
         <View style={{flexDirection: 'row'}}>
-          <Text style={[privacyPoliciesStyle.countText,{color:colors.text}]}>1. </Text>
-          <Text style={[privacyPoliciesStyle.privacyDescription,{color:colors.text}]}>
+          <Text style={[privacyPoliciesStyle.countText,{color:color.lightBlack}]}>1. </Text>
+          <Text style={[privacyPoliciesStyle.privacyDescription,{color:color.lightBlack}]}>
             to address user requests and inquiries,
           </Text>
         </View>
         <View style={{flexDirection: 'row'}}>
-          <Text style={[privacyPoliciesStyle.countText,{color:colors.text}]}>2. </Text>
-          <Text style={[privacyPoliciesStyle.privacyDescription,{color:colors.text}]}>
+          <Text style={[privacyPoliciesStyle.countText,{color:color.lightBlack}]}>2. </Text>
+          <Text style={[privacyPoliciesStyle.privacyDescription,{color:color.lightBlack}]}>
             to analyze, assess, and enhance our products and services, and
           </Text>
         </View>
         <View style={{flexDirection: 'row'}}>
-          <Text style={[privacyPoliciesStyle.countText,{color:colors.text}]}>3. </Text>
-          <Text style={[privacyPoliciesStyle.privacyDescription,{color:colors.text}]}>
+          <Text style={[privacyPoliciesStyle.countText,{color:color.lightBlack}]}>3. </Text>
+          <Text style={[privacyPoliciesStyle.privacyDescription,{color:color.lightBlack}]}>
             for marketing and advertising our products and services. We may
             reveal this information (including the recording of your
             conversation with the chatbot) as outlined in the section of this
@@ -369,7 +369,7 @@ const PrivacyPolicies = () => {
         <Text
           style={[
             privacyPoliciesStyle.privacyDescription,
-            {marginTop: verticalScale(15),color:colors.text},
+            {marginTop: verticalScale(15),color:color.lightBlack},
           ]}>
           The information collected through the chatbot, and its associated
           metadata will be kept for a duration that is reasonably necessary for
@@ -383,11 +383,11 @@ const PrivacyPolicies = () => {
         <Text
           style={[
             privacyPoliciesStyle.QuestionHeading,
-            {marginTop: verticalScale(20),color:colors.text},
+            {marginTop: verticalScale(20),color:color.lightBlack},
           ]}>
           Customer reviews:
         </Text>
-        <Text style={[privacyPoliciesStyle.privacyDescription,{color:colors.text}]}>
+        <Text style={[privacyPoliciesStyle.privacyDescription,{color:color.lightBlack}]}>
           Our website showcases personal testimonials from contented customers,
           along with other forms of endorsement. Subject to your authorization,
           we may publish your testimonial on a website, including your name. To
@@ -404,7 +404,7 @@ const PrivacyPolicies = () => {
           return (
             <View key={index} style={privacyPoliciesStyle.dotTextView}>
               <View style={[privacyPoliciesStyle.dot,{backgroundColor:colors.dotColor}]} />
-              <Text style={[privacyPoliciesStyle.privacyDescription,{color:colors.text}]}>
+              <Text style={[privacyPoliciesStyle.privacyDescription,{color:color.lightBlack}]}>
                 {item.value}
               </Text>
             </View>
@@ -416,11 +416,11 @@ const PrivacyPolicies = () => {
         <Text
           style={[
             privacyPoliciesStyle.QuestionHeading,
-            {marginTop: verticalScale(20),color:colors.text},
+            {marginTop: verticalScale(20),color:color.lightBlack},
           ]}>
           Tracking Contacts and the Total Recall Mobile App:
         </Text>
-        <Text style={[privacyPoliciesStyle.privacyDescription,{color:colors.text}]}>
+        <Text style={[privacyPoliciesStyle.privacyDescription,{color:color.lightBlack}]}>
           To notify users of potential COVID-19 exposure, clients utilize the
           Total Recall application in conjunction with our contact tracing
           tools. Compiling encrypted proximity keys, our tools utilize a
@@ -444,11 +444,11 @@ const PrivacyPolicies = () => {
         <Text
           style={[
             privacyPoliciesStyle.QuestionHeading,
-            {marginTop: verticalScale(20),color:colors.text},
+            {marginTop: verticalScale(20),color:color.lightBlack},
           ]}>
           How does Total-Recall use information that was collected?
         </Text>
-        <Text style={[privacyPoliciesStyle.privacyDescription,{color:colors.text}]}>
+        <Text style={[privacyPoliciesStyle.privacyDescription,{color:color.lightBlack}]}>
           1. Customer Data: - Employed in the provision of services such as
           support, notifications, and announcements of new features.{'\n'}
           Customers may be contacted for administrative purposes, to resolve
@@ -481,11 +481,11 @@ const PrivacyPolicies = () => {
         <Text
           style={[
             privacyPoliciesStyle.QuestionHeading,
-            {marginTop: verticalScale(20),color:colors.text},
+            {marginTop: verticalScale(20),color:color.lightBlack},
           ]}>
           Third Parties with Whom Total Recall May Share Your Information:
         </Text>
-        <Text style={[privacyPoliciesStyle.privacyDescription,{color:colors.text}]}>
+        <Text style={[privacyPoliciesStyle.privacyDescription,{color:color.lightBlack}]}>
           Total Recall may need to share customer data with third parties to
           fulfill service requests from customers. Such sharing is limited to
           information essential for the service and under terms ensuring the
@@ -497,7 +497,7 @@ const PrivacyPolicies = () => {
         <Text
           style={[
             privacyPoliciesStyle.QuestionHeading,
-            {marginTop: verticalScale(20),color:colors.text},
+            {marginTop: verticalScale(20),color:color.lightBlack},
           ]}>
           Personal information may be disclosed:
         </Text>
@@ -505,14 +505,14 @@ const PrivacyPolicies = () => {
           return (
             <View key={index} style={privacyPoliciesStyle.dotTextView}>
               <View style={[privacyPoliciesStyle.dot,{backgroundColor:colors.dotColor}]} />
-              <Text style={[privacyPoliciesStyle.privacyDescription,{color:colors.text}]}>
+              <Text style={[privacyPoliciesStyle.privacyDescription,{color:color.lightBlack}]}>
                 {item.value}
               </Text>
             </View>
           );
         })}
 
-        <Text style={[privacyPoliciesStyle.privacyDescription,{color:colors.text}]}>
+        <Text style={[privacyPoliciesStyle.privacyDescription,{color:color.lightBlack}]}>
           Total Recall does not sell, trade, or rent customer data or personal
           information to external parties.
         </Text>
@@ -520,12 +520,12 @@ const PrivacyPolicies = () => {
         <Text
           style={[
             privacyPoliciesStyle.QuestionHeading,
-            {marginTop: verticalScale(20),color:colors.text},
+            {marginTop: verticalScale(20),color:color.lightBlack},
           ]}>
           Legal justification for the processing of your personal information
           (only for EEA/UK/Brazil citizens)
         </Text>
-        <Text style={[privacyPoliciesStyle.privacyDescription,{color:colors.text}]}>
+        <Text style={[privacyPoliciesStyle.privacyDescription,{color:color.lightBlack}]}>
           Our legal justification for processing personal information of
           visitors from the European Economic Area (EEA) or the United Kingdom
           will be contingent upon the nature of the information being collected
@@ -560,11 +560,11 @@ const PrivacyPolicies = () => {
         <Text
           style={[
             privacyPoliciesStyle.QuestionHeading,
-            {marginTop: verticalScale(20),color:colors.text},
+            {marginTop: verticalScale(20),color:color.lightBlack},
           ]}>
           Resolution of disputes and complaint mechanism
         </Text>
-        <Text style={[privacyPoliciesStyle.privacyDescription,{color:colors.text}]}>
+        <Text style={[privacyPoliciesStyle.privacyDescription,{color:color.lightBlack}]}>
           In compliance with the Privacy Shield Principles, Total Recall commits
           to resolving complaints about our collection or use of your personal
           information. EU and Swiss individuals with inquiries or complaints
@@ -585,11 +585,11 @@ const PrivacyPolicies = () => {
         <Text
           style={[
             privacyPoliciesStyle.QuestionHeading,
-            {marginTop: verticalScale(20),color:colors.text},
+            {marginTop: verticalScale(20),color:color.lightBlack},
           ]}>
           Compliance with enforcement
         </Text>
-        <Text style={[privacyPoliciesStyle.privacyDescription,{color:colors.text}]}>
+        <Text style={[privacyPoliciesStyle.privacyDescription,{color:color.lightBlack}]}>
           The United States Federal Trade Commission (FTC) has authority over
           Total Recall's privacy practices; therefore, in the jurisdictions
           where we provide services, Total Recall is subject to the
@@ -600,11 +600,11 @@ const PrivacyPolicies = () => {
         <Text
           style={[
             privacyPoliciesStyle.QuestionHeading,
-            {marginTop: verticalScale(20),color:colors.text},
+            {marginTop: verticalScale(20),color:color.lightBlack},
           ]}>
           Subsequent transmission
         </Text>
-        <Text style={[privacyPoliciesStyle.privacyDescription,{color:colors.text}]}>
+        <Text style={[privacyPoliciesStyle.privacyDescription,{color:color.lightBlack}]}>
           Total Recall will only transfer personal data to a third party if that
           third party acts as an agent. In such cases, Total Recall will make
           sure to have a written agreement with the third party. This agreement
@@ -619,11 +619,11 @@ const PrivacyPolicies = () => {
         <Text
           style={[
             privacyPoliciesStyle.QuestionHeading,
-            {marginTop: verticalScale(20),color:colors.text},
+            {marginTop: verticalScale(20),color:color.lightBlack},
           ]}>
           Data protection
         </Text>
-        <Text style={[privacyPoliciesStyle.privacyDescription,{color:colors.text}]}>
+        <Text style={[privacyPoliciesStyle.privacyDescription,{color:color.lightBlack}]}>
           Precautions have been taken to safeguard your personal information
           against inadvertent loss, as well as from unauthorized access, use,
           modification, and disclosure. Ensuring the security of both our
@@ -664,18 +664,18 @@ const PrivacyPolicies = () => {
         <Text
           style={[
             privacyPoliciesStyle.QuestionHeading,
-            {marginTop: verticalScale(20),color:colors.text},
+            {marginTop: verticalScale(20),color:color.lightBlack},
           ]}>
           Choices about how we use and disclose your information
         </Text>
-        <Text style={[privacyPoliciesStyle.privacyDescription,{color:colors.text}]}>
+        <Text style={[privacyPoliciesStyle.privacyDescription,{color:color.lightBlack}]}>
           Our primary objective is to offer you options with respect to your
           personal information. We have established mechanisms to grant you the
           subsequent authority regarding your information:
         </Text>
         <View style={privacyPoliciesStyle.dotTextView}>
           <View style={[privacyPoliciesStyle.dot,{backgroundColor:colors.dotColor}]} />
-          <Text style={[privacyPoliciesStyle.privacyDescription,{color:colors.text}]}>
+          <Text style={[privacyPoliciesStyle.privacyDescription,{color:color.lightBlack}]}>
             Client Data. To modify your contact information while using Total
             Recall services as an employee, resident, or other designee of one
             of our customers, you must initiate the process via that customer.
@@ -684,7 +684,7 @@ const PrivacyPolicies = () => {
             interaction.
           </Text>
         </View>
-        <Text style={[privacyPoliciesStyle.privacyDescription,{color:colors.text}]}>
+        <Text style={[privacyPoliciesStyle.privacyDescription,{color:color.lightBlack}]}>
           We will promptly comply with the customer's request for data removal
           from Total Recall, ensuring that our response is provided within a
           reasonable timeframe.
@@ -695,7 +695,7 @@ const PrivacyPolicies = () => {
             {width: '95%', justifyContent: 'center', alignSelf: 'center'},
           ]}>
           <View style={[privacyPoliciesStyle.dot,{backgroundColor:colors.dotColor}]} />
-          <Text style={[privacyPoliciesStyle.privacyDescription,{color:colors.text}]}>
+          <Text style={[privacyPoliciesStyle.privacyDescription,{color:color.lightBlack}]}>
             We Provide Promotional Offers. You have the option to decline
             receiving information regarding our products or services by
             modifying your user preferences at
@@ -706,7 +706,7 @@ const PrivacyPolicies = () => {
           </Text>
         </View>
 
-        <Text style={[privacyPoliciesStyle.privacyDescription,{color:colors.text}]}>
+        <Text style={[privacyPoliciesStyle.privacyDescription,{color:color.lightBlack}]}>
           You may reply to any promotional email we have sent you with a request
           to be removed from future email distributions.
         </Text>
@@ -716,13 +716,13 @@ const PrivacyPolicies = () => {
             {width: '95%', justifyContent: 'center', alignSelf: 'center'},
           ]}>
           <View style={[privacyPoliciesStyle.dot,{backgroundColor:colors.dotColor}]} />
-          <Text style={[privacyPoliciesStyle.privacyDescription,{color:colors.text}]}>
+          <Text style={[privacyPoliciesStyle.privacyDescription,{color:color.lightBlack}]}>
             Notifications via push. On occasion, we may deliver push
             notifications via our mobile applications to provide you with
             service-related updates and other pertinent notifications.
           </Text>
         </View>
-        <Text style={[privacyPoliciesStyle.privacyDescription,{color:colors.text}]}>
+        <Text style={[privacyPoliciesStyle.privacyDescription,{color:color.lightBlack}]}>
           At any time, you have the option to discontinue receiving such
           communications by contacting our customer service department at
           privacy@totalrecall.com.
@@ -731,11 +731,11 @@ const PrivacyPolicies = () => {
         <Text
           style={[
             privacyPoliciesStyle.QuestionHeading,
-            {marginTop: verticalScale(20),color:colors.text},
+            {marginTop: verticalScale(20),color:color.lightBlack},
           ]}>
           Individual rights in the EEA, the United Kingdom, and Brazil
         </Text>
-        <Text style={[privacyPoliciesStyle.privacyDescription,{color:colors.text}]}>
+        <Text style={[privacyPoliciesStyle.privacyDescription,{color:color.lightBlack}]}>
           Additionally, residents of the EEA, the United Kingdom, or Brazil are
           entitled to:
         </Text>
@@ -748,14 +748,14 @@ const PrivacyPolicies = () => {
                 {width: '95%', justifyContent: 'center', alignSelf: 'center'},
               ]}>
               <View style={[privacyPoliciesStyle.dot,{backgroundColor:colors.dotColor}]} />
-              <Text style={[privacyPoliciesStyle.privacyDescription,{color:colors.text}]}>
+              <Text style={[privacyPoliciesStyle.privacyDescription,{color:color.lightBlack}]}>
                 {item.value}
               </Text>
             </View>
           );
         })}
 
-        <Text style={[privacyPoliciesStyle.privacyDescription,{color:colors.text}]}>
+        <Text style={[privacyPoliciesStyle.privacyDescription,{color:color.lightBlack}]}>
           You are welcome to contact us at any time using the information
           provided under the heading "Contacting Us" if you wish to exercise any
           of the rights discussed above. No fee will be required for you to
@@ -780,11 +780,11 @@ const PrivacyPolicies = () => {
         <Text
           style={[
             privacyPoliciesStyle.QuestionHeading,
-            {marginTop: verticalScale(20),color:colors.text},
+            {marginTop: verticalScale(20),color:color.lightBlack},
           ]}>
           Your California privacy rights
         </Text>
-        <Text style={[privacyPoliciesStyle.privacyDescription,{color:colors.text}]}>
+        <Text style={[privacyPoliciesStyle.privacyDescription,{color:color.lightBlack}]}>
           Under California state law, Total Recall is just a service provider
           because we don’t sell personal information to anyone (although we may
           process it on behalf of our customers). However, in accordance with
@@ -798,11 +798,11 @@ const PrivacyPolicies = () => {
         <Text
           style={[
             privacyPoliciesStyle.QuestionHeading,
-            {marginTop: verticalScale(20),color:colors.text},
+            {marginTop: verticalScale(20),color:color.lightBlack},
           ]}>
           Your Nevada privacy rights
         </Text>
-        <Text style={[privacyPoliciesStyle.privacyDescription,{color:colors.text}]}>
+        <Text style={[privacyPoliciesStyle.privacyDescription,{color:color.lightBlack}]}>
           Under Nevada state law, Total Recall is not considered a "operator"
           because we do not license or sell personal information to third
           parties. Nevertheless, as stipulated in Nevada Senate Bill 220, Nevada
@@ -820,7 +820,7 @@ const PrivacyPolicies = () => {
             {width: '95%', justifyContent: 'center', alignSelf: 'center'},
           ]}>
           <View style={[privacyPoliciesStyle.dot,{backgroundColor:colors.dotColor}]} />
-          <Text style={[privacyPoliciesStyle.privacyDescription,{color:colors.text}]}>
+          <Text style={[privacyPoliciesStyle.privacyDescription,{color:color.lightBlack}]}>
             Please text HELP to XXXXXX or reach out to customer service at
             support@total-recall.us or 833-486-8257.
           </Text>
@@ -832,7 +832,7 @@ const PrivacyPolicies = () => {
             {width: '95%', justifyContent: 'center', alignSelf: 'center'},
           ]}>
           <View style={[privacyPoliciesStyle.dot,{backgroundColor:colors.dotColor}]} />
-          <Text style={[privacyPoliciesStyle.privacyDescription,{color:colors.text}]}>
+          <Text style={[privacyPoliciesStyle.privacyDescription,{color:color.lightBlack}]}>
             STOP is the code to exit the program when sent to XXXXXX.
           </Text>
         </View>
@@ -843,7 +843,7 @@ const PrivacyPolicies = () => {
             {width: '95%', justifyContent: 'center', alignSelf: 'center'},
           ]}>
           <View style={[privacyPoliciesStyle.dot,{backgroundColor:colors.dotColor}]} />
-          <Text style={[privacyPoliciesStyle.privacyDescription,{color:colors.text}]}>
+          <Text style={[privacyPoliciesStyle.privacyDescription,{color:color.lightBlack}]}>
             Data and message charges may be applicable. Review the plan details
             provided by your wireless provider. Your wireless provider charges
             are subject to your responsibility.
@@ -856,7 +856,7 @@ const PrivacyPolicies = () => {
             {width: '95%', justifyContent: 'center', alignSelf: 'center'},
           ]}>
           <View style={[privacyPoliciesStyle.dot,{backgroundColor:colors.dotColor}]} />
-          <Text style={[privacyPoliciesStyle.privacyDescription,{color:colors.text}]}>
+          <Text style={[privacyPoliciesStyle.privacyDescription,{color:color.lightBlack}]}>
             Carrier liability does not extend to undelivered or delayed
             messages.
           </Text>
@@ -868,7 +868,7 @@ const PrivacyPolicies = () => {
             {width: '95%', justifyContent: 'center', alignSelf: 'center'},
           ]}>
           <View style={[privacyPoliciesStyle.dot,{backgroundColor:colors.dotColor}]} />
-          <Text style={[privacyPoliciesStyle.privacyDescription,{color:colors.text}]}>
+          <Text style={[privacyPoliciesStyle.privacyDescription,{color:color.lightBlack}]}>
             Message frequency is contingent upon account configurations.
           </Text>
         </View>
@@ -876,11 +876,11 @@ const PrivacyPolicies = () => {
         <Text
           style={[
             privacyPoliciesStyle.QuestionHeading,
-            {marginTop: verticalScale(20),color:colors.text},
+            {marginTop: verticalScale(20),color:color.lightBlack},
           ]}>
           Prospective business dealings and modifications to the privacy notice
         </Text>
-        <Text style={[privacyPoliciesStyle.privacyDescription,{color:colors.text}]}>
+        <Text style={[privacyPoliciesStyle.privacyDescription,{color:color.lightBlack}]}>
           Total Recall may undergo business transitions, including mergers and
           acquisitions, or the sale of a substantial portion of its assets, as
           it continues to develop and expand. In such circumstances, it is
@@ -904,14 +904,14 @@ const PrivacyPolicies = () => {
         <Text
           style={[
             privacyPoliciesStyle.QuestionHeading,
-            {marginTop: verticalScale(20),color:colors.text},
+            {marginTop: verticalScale(20),color:color.lightBlack},
           ]}>
           Contacting us
         </Text>
         <Text
           style={[
             privacyPoliciesStyle.privacyDescription,
-            {marginBottom: verticalScale(40),color:colors.text},
+            {marginBottom: verticalScale(40),color:color.lightBlack},
           ]}>
           If you have any questions about this privacy notice, please contact us
           at the following address:{'\n'}

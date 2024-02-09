@@ -181,6 +181,7 @@ const TwoFAuthentication = ({navigation}) => {
               toggleSwitch={() =>
                 enableTwoFactorAuthentication('phone', userDataPhone, {phone})
               }
+              disable={false}
             />
             <icons.RightArrow width={18} height={18}/>
             {/* {switchValue === false ? (
@@ -220,6 +221,7 @@ const TwoFAuthentication = ({navigation}) => {
               toggleSwitch={() =>
                 enableTwoFactorAuthentication('email', userDataEmail, {email})
               }
+              disable={false}
             />
             <icons.RightArrow width={18} height={18}/>
             {/* {switchValue === false ? (

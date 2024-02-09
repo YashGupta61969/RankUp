@@ -26,7 +26,7 @@ const AccountDetail = () => {
   // const {switchValue} = useSelector(state => state.switch);
   const userAddress = `${userData.city ? userData.city : ''} ${
     userData.state ? userData.state : ''
-  }${userData.zip_code ? userData.zip_code : ''}`;
+  } ${userData.zip_code ? userData.zip_code : ''}`;
 
   // Profile BottomSheet Open & Close
 

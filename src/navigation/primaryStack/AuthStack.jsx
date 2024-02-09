@@ -1,12 +1,29 @@
 import {View, Text, SafeAreaView} from 'react-native';
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 import {createNativeStackNavigator} from '@react-navigation/native-stack';
 import {authRoutes} from '../../constants/routes';
 import Login from '../../screens/auth/login/Login';
 import Signup from '../../screens/auth/signup/Signup';
+import SplashScreen from '../../screens/splashScreen/SplashScreen';
 
 const Stack = createNativeStackNavigator();
 const AuthStack = () => {
+  const [splashTimer, setSplashTimer] = useState(true);
+
+
+  useEffect(() => {
+    const timer = setTimeout(() => {
+      setSplashTimer(false);
+    }, 2000);
+
+    return () => clearTimeout(timer);
+  }, []);
+
+  if (splashTimer) {
+    return <SplashScreen />;
+  }
+
+
   return (
     <SafeAreaView style={{flex: 1}}>
       <Stack.Navigator screenOptions={{headerShown: false}}>

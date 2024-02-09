@@ -45,6 +45,7 @@ const Account = () => {
     try {
       setLoading(true);
       const {data} = await getProfile();
+      console.log("Data",data)
       setUserData(data?.results);
       setLoading(false);
     } catch (error) {

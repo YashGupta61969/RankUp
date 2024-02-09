@@ -27,7 +27,7 @@ const Notification = () => {
         <Text style={[notificationStyle.optionText, {color: color.lightBlack}]}>
           Enable Notification
         </Text>
-        <CustomSwitchButton />
+        <CustomSwitchButton disable={true}/>
       </View>
 
       <View
@@ -44,7 +44,8 @@ const Notification = () => {
             style={[notificationStyle.optionText, {color: color.lightBlack}]}>
             Show app icon badge
           </Text>
-          <CustomSwitchButton />
+          <CustomSwitchButton disable={true}/>
+
         </View>
         <View
           style={[
@@ -55,7 +56,8 @@ const Notification = () => {
             style={[notificationStyle.optionText, {color: color.lightBlack}]}>
             Floating Notification
           </Text>
-          <CustomSwitchButton />
+          <CustomSwitchButton disable={true}/>
+
         </View>
         <View
           style={[
@@ -66,7 +68,8 @@ const Notification = () => {
             style={[notificationStyle.optionText, {color: color.lightBlack}]}>
             Enable Notification
           </Text>
-          <CustomSwitchButton />
+          <CustomSwitchButton disable={true}/>
+
         </View>
         <View
           style={[
@@ -86,7 +89,8 @@ const Notification = () => {
               Allow notifications on lock screen
             </Text>
           </View>
-          <CustomSwitchButton />
+          <CustomSwitchButton disable={true}/>
+
         </View>
         <View
           style={[
@@ -97,7 +101,8 @@ const Notification = () => {
             style={[notificationStyle.optionText, {color: color.lightBlack}]}>
             Allow Vibration
           </Text>
-          <CustomSwitchButton />
+          <CustomSwitchButton disable={true}/>
+
         </View>
       </View>
     </View>

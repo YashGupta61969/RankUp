@@ -64,7 +64,7 @@ const ChangePassword = ({navigation}) => {
     <View
       style={[
         changePasswordStyle.changePasswordMain,
-        {backgroundColor: colors.background},
+
       ]}>
       <ChildStackHeader
         text={accountRoutes.ChangePassword}
@@ -135,7 +135,7 @@ const ChangePassword = ({navigation}) => {
                   onChangeText={field.onChange}
                   placeholderTextColor={'grey'}
                   style={[changePasswordStyle.inputbox, {padding: padding}]}
-                  placeholder="example"></TextInput>
+                  placeholder="************"></TextInput>
               )}></Controller>
             {errors.password && (
               <Text style={changePasswordStyle.errorText}>

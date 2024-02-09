@@ -53,7 +53,7 @@ export const narrativesStyle = StyleSheet.create({
   dotViewMain: {
     backgroundColor: color.lightSkyBlue,
     width: '14%',
-    height: '6%',
+    height: '5%',
     borderRadius: moderateScale(8),
     alignItems: 'center',
     justifyContent: 'center',

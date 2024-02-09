@@ -43,7 +43,6 @@ export const privacyPoliciesStyle = StyleSheet.create({
     color: color.blue_brand,
     fontSize: RFValue(sizes.p5, 667),
     width: '97%',
-    fontWeight: '600',
     lineHeight: verticalScale(16),
   },
   QuestionHeading:{

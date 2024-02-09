@@ -4,6 +4,7 @@ import ChildStackHeader from '../../components/navigation/childStackHeader/Child
 import {accountRoutes} from '../../constants/routes';
 import {useTheme} from '@react-navigation/native';
 import {policiesStyle} from './policiesStyle';
+import { color } from '../../constants/colors';
 
 const Policies = ({navigation}) => {
   const {colors} = useTheme();
@@ -14,12 +15,12 @@ const Policies = ({navigation}) => {
       <View
         style={[
           policiesStyle.optionWrapper,
-          {borderColor: colors.cardBorder, backgroundColor: colors.screenCard},
+          {borderColor: color.grey, backgroundColor: color.lightSkyBlue},
         ]}>
         <TouchableOpacity
           style={[
             policiesStyle.optionWraaperItem,
-            {borderBottomWidth: 1, borderColor: colors.cardBorder},
+            {borderBottomWidth: 1, borderColor: color.grey},
           ]}
           onPress={() => navigation.navigate(accountRoutes.PrivacyPolicies)}>
           <Text style={[policiesStyle.optionText, {color: colors.text}]}>

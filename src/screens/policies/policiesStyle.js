@@ -3,6 +3,7 @@ import { horizontalScale, moderateScale, verticalScale } from '../../constants/d
 import { fonts } from '../../constants/fonts';
 import { RFValue } from 'react-native-responsive-fontsize';
 import { sizes } from '../../constants/fontSize';
+import { color } from '../../constants/colors';
 
 
 export const policiesStyle = StyleSheet.create({
@@ -10,6 +11,7 @@ export const policiesStyle = StyleSheet.create({
     flex: 1,
     paddingHorizontal: horizontalScale(17),
     paddingTop: verticalScale(10),
+    backgroundColor:color.white
   },
   optionWrapper: {
     borderWidth: 1,
