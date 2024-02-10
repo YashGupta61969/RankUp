@@ -4,7 +4,7 @@ import { color } from '../../../constants/colors';
 import { horizontalScale, moderateScale, verticalScale } from '../../../constants/dimension';
 import { useTheme } from '@react-navigation/native';
 
-const CustomCheckBox = ({onChange,selectedBullets,index}) => {
+const CustomCheckBox = ({onChange,selectedBullets,index,showColor}) => {
   const [checked, setChecked] = React.useState(false);
 
 
@@ -25,7 +25,7 @@ const CustomCheckBox = ({onChange,selectedBullets,index}) => {
         onFillColor={color.white}
         value={checked}
         onValueChange={handleValueChange}
-        tintColors={{ true: color.black, false: color.black }}
+        tintColors={{ true: checked && showColor === "Yes" ? color.white:color.black, false: color.black }}
          
       />
   );

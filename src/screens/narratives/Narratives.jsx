@@ -174,7 +174,8 @@ const Narratives = ({navigation}) => {
                     <CustomCheckBox
                       selectedBullets={selectedBullets}
                       index={index}
-                      //  checked={selectedBullets?.includes(index)}
+                      ShowColor="No"
+                      checked={selectedBullets?.includes(index)}
                       onChange={() => handleCheckBoxChange(index, item)}
                     />
                   </View>

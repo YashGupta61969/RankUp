@@ -1,5 +1,5 @@
 import {View, Text, SafeAreaView} from 'react-native';
-import React, { useEffect, useState } from 'react';
+import React, { useEffect, useRef, useState } from 'react';
 import {createNativeStackNavigator} from '@react-navigation/native-stack';
 import {authRoutes} from '../../constants/routes';
 import Login from '../../screens/auth/login/Login';
@@ -8,20 +8,22 @@ import SplashScreen from '../../screens/splashScreen/SplashScreen';
 
 const Stack = createNativeStackNavigator();
 const AuthStack = () => {
-  const [splashTimer, setSplashTimer] = useState(true);
+//  const [splashTimer, setSplashTimer] = useState(true);
+
+//   useEffect(() => {
+//     const timer = setTimeout(() => {
+//       setSplashTimer(false);
+//     }, 2000);
+
+//     return () => clearTimeout(timer);
+//   }, []);
+
+//   if (splashTimer) {
+//     return <SplashScreen />;
+//   }
+// CheckToken
 
 
-  useEffect(() => {
-    const timer = setTimeout(() => {
-      setSplashTimer(false);
-    }, 2000);
-
-    return () => clearTimeout(timer);
-  }, []);
-
-  if (splashTimer) {
-    return <SplashScreen />;
-  }
 
 
   return (

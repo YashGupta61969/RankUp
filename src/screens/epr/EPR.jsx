@@ -61,19 +61,22 @@ const EPR = ({navigation}) => {
         return;
       }
 
-      // setLoading(true);
+      setLoading(true);
       const requiredData = {
         action: action,
         impact: impact,
         result: result,
+        adverb: "Successfully",
+        narrative:"true"
       };
-      // const {data} = await CreateEpr(requiredData);
-      // setAction('');
-      // setImpact('');
-      // setResult('');
-      // setTitle('');
-      // setLoading(false);
-      // toast({type: 'success', text1: 'EPR created Successfully'});
+      const {data} = await CreateEpr(requiredData);
+      console.log("Data",data)
+      setAction('');
+      setImpact('');
+      setResult('');
+      setTitle('');
+      setLoading(false);
+      toast({type: 'success', text1: 'EPR created Successfully'});
       navigation.navigate(homeRoutes.GeneratedNarrative, {
         data,
         title,
@@ -91,7 +94,7 @@ const EPR = ({navigation}) => {
       <ScrollView
         automaticallyAdjustKeyboardInsets={true}
         showsVerticalScrollIndicator={false}>
-        {/* <Loader loading={loading} /> */}
+        <Loader loading={loading} />
         <View
           style={[
             eprStyle.titleView,
@@ -245,7 +248,7 @@ const EPR = ({navigation}) => {
             onFillColor={color.white}
             value={checked}
             onValueChange={() => setChecked(!checked)}
-            tintColors={{true: color.black, false: color.black}}
+            tintColors={{true: color.white, false: color.white}}
           />
           <Text style={eprStyle.confirmationText}>
             No CUI for classified information allowed

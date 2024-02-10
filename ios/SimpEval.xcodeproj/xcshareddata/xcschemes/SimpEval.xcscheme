@@ -15,9 +15,9 @@
             <BuildableReference
                BuildableIdentifier = "primary"
                BlueprintIdentifier = "13B07F861A680F5B00A75B9A"
-               BuildableName = "RankUp.app"
-               BlueprintName = "RankUp"
-               ReferencedContainer = "container:RankUp.xcodeproj">
+               BuildableName = "RankEval.app"
+               BlueprintName = "RankEval"
+               ReferencedContainer = "container:RankEval.xcodeproj">
             </BuildableReference>
          </BuildActionEntry>
       </BuildActionEntries>
@@ -33,9 +33,9 @@
             <BuildableReference
                BuildableIdentifier = "primary"
                BlueprintIdentifier = "00E356ED1AD99517003FC87E"
-               BuildableName = "RankUpTests.xctest"
-               BlueprintName = "RankUpTests"
-               ReferencedContainer = "container:RankUp.xcodeproj">
+               BuildableName = "RankEvalTests.xctest"
+               BlueprintName = "RankEvalTests"
+               ReferencedContainer = "container:RankEval.xcodeproj">
             </BuildableReference>
          </TestableReference>
       </Testables>
@@ -55,9 +55,9 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "13B07F861A680F5B00A75B9A"
-            BuildableName = "RankUp.app"
-            BlueprintName = "RankUp"
-            ReferencedContainer = "container:RankUp.xcodeproj">
+            BuildableName = "RankEval.app"
+            BlueprintName = "RankEval"
+            ReferencedContainer = "container:RankEval.xcodeproj">
          </BuildableReference>
       </BuildableProductRunnable>
    </LaunchAction>
@@ -72,9 +72,9 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "13B07F861A680F5B00A75B9A"
-            BuildableName = "RankUp.app"
-            BlueprintName = "RankUp"
-            ReferencedContainer = "container:RankUp.xcodeproj">
+            BuildableName = "RankEval.app"
+            BlueprintName = "RankEval"
+            ReferencedContainer = "container:RankEval.xcodeproj">
          </BuildableReference>
       </BuildableProductRunnable>
    </ProfileAction>

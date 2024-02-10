@@ -1,4 +1,5 @@
 import axios from "axios";
+import instance from "../axios/axiosInstance";
 
 export const CreateEpr = async(requiredData)=>{
     try {
@@ -12,6 +13,18 @@ export const CreateEpr = async(requiredData)=>{
               },
         data:requiredData,
         })
+        return res;
+    } catch (error) {
+        throw error;
+    }
+}
+
+
+// Post EPR
+
+export const submitEpr = async(requiredEprData)=>{
+    try {
+        const res = await instance.post("erporp/",requiredEprData)
         return res;
     } catch (error) {
         throw error;
