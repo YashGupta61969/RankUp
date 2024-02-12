@@ -121,7 +121,6 @@ const AccountDetail = () => {
           style={[
             accountDetailStyle.userDetailView,
             {
-              backgroundColor: color.lightSkyBlue,
               borderColor: color.grey,
             },
           ]}>
@@ -200,14 +199,45 @@ const AccountDetail = () => {
                   accountDetailStyle.detailHeading,
                   {color: color.lightBlack},
                 ]}>
-                Company department
+                Military Branch Option
               </Text>
               <Text
                 style={[
                   accountDetailStyle.userDetailText,
                   {color: color.lightBlack},
                 ]}>
-                Google Organization (Dev Ops dept)
+                Air Force
+              </Text>
+            </View>
+            <icons.RightArrow width={18} height={18} />
+
+            {/* {switchValue === false ? (
+              <icons.RightArrow width={18} height={18} />
+            ) : (
+              <icons.RightArrowLight width={22} height={22} />
+            )} */}
+          </TouchableOpacity>
+
+
+          <TouchableOpacity
+            style={[
+              accountDetailStyle.userDetailTouchableItem,
+              {borderColor: color.grey},
+            ]}>
+            <View>
+              <Text
+                style={[
+                  accountDetailStyle.detailHeading,
+                  {color: color.lightBlack},
+                ]}>
+                Military Rank
+              </Text>
+              <Text
+                style={[
+                  accountDetailStyle.userDetailText,
+                  {color: color.lightBlack},
+                ]}>
+                Master Sergeant
               </Text>
             </View>
             <icons.RightArrow width={18} height={18} />

@@ -45,7 +45,6 @@ const Account = () => {
     try {
       setLoading(true);
       const {data} = await getProfile();
-      console.log("Data",data)
       setUserData(data?.results);
       setLoading(false);
     } catch (error) {
@@ -100,7 +99,7 @@ const Account = () => {
           <View
             style={[
               accountStyle.userProfile,
-              {backgroundColor: color.lightSkyBlue},
+              {backgroundColor: color.lightGrey},
             ]}>
             <View style={accountStyle.userImage}>
               <Image
@@ -136,7 +135,7 @@ const Account = () => {
           style={[
             accountStyle.accountSettings,
             {
-              backgroundColor: color.lightSkyBlue,
+              backgroundColor: color.lightGrey,
               borderColor: color.grey,
             },
           ]}>
@@ -179,6 +178,19 @@ const Account = () => {
             //   )
             // }
             icon={<icons.Settings width={25} height={25} />}
+          />
+           <SettingItem
+            textHeading="Support"
+            textDescription="Get attended to by our swift support team"
+            route={accountRoutes.Setting}
+            // icon={
+            //   switchValue === false ? (
+            //     <icons.DarkSettings width={25} height={25} />
+            //   ) : (
+            //     <icons.SettingLight width={25} height={25} />
+            //   )
+            // }
+            icon={<icons.Support width={25} height={25} />}
           />
           <SettingItem
             textHeading="Terms & Policy"

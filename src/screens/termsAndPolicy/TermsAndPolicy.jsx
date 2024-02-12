@@ -17,7 +17,7 @@ const TermsAndPolicy = ({navigation}) => {
         text={accountRoutes.TermsAndPolicy}
         textColor={colors.text}
       />
-      <View style={[termsAndPolicyStyle.termsAndPolicyOptions,{backgroundColor:color.lightSkyBlue,borderColor:color.grey}]}>
+      <View style={[termsAndPolicyStyle.termsAndPolicyOptions,{backgroundColor:color.lightGrey,borderColor:color.grey}]}>
         <TouchableOpacity
           onPress={() => navigation.navigate(accountRoutes.TermsAndConditions)}
           activeOpacity={1}

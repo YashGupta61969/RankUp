@@ -182,7 +182,7 @@ const PrivacyPolicies = () => {
       <ScrollView
         style={[
           privacyPoliciesStyle.privacyPoliciesPage,
-          {backgroundColor: colors.screenCard, borderColor: color.grey},
+          {backgroundColor: color.lightGrey, borderColor: color.grey},
         ]}>
         <Text style={[privacyPoliciesStyle.termsAndConditions,{color:color.lightBlack}]}>
           Terms and Conditions

@@ -137,7 +137,7 @@ const TermsAndConditions = () => {
       <ScrollView
         style={[
           termsAndConditionStyle.termsAndConditionPage,
-          {backgroundColor: color.lightSkyBlue, borderColor: color.grey},
+          {backgroundColor: color.lightGrey, borderColor: color.grey},
         ]}>
         <View style={termsAndConditionStyle.termsAndConditionsTop}>
           <Text style={[termsAndConditionStyle.termsAndConditionText,{color:color.lightBlack}]}>

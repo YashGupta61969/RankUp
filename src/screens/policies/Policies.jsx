@@ -15,7 +15,7 @@ const Policies = ({navigation}) => {
       <View
         style={[
           policiesStyle.optionWrapper,
-          {borderColor: color.grey, backgroundColor: color.lightSkyBlue},
+          {borderColor: color.grey, backgroundColor: color.lightGrey},
         ]}>
         <TouchableOpacity
           style={[

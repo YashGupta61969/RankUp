@@ -22,7 +22,7 @@ const Notification = () => {
       <View
         style={[
           notificationStyle.notificationOptionView,
-          {backgroundColor: color.lightSkyBlue, borderColor: color.grey},
+          {backgroundColor: color.lightGrey, borderColor: color.grey},
         ]}>
         <Text style={[notificationStyle.optionText, {color: color.lightBlack}]}>
           Enable Notification
@@ -33,7 +33,7 @@ const Notification = () => {
       <View
         style={[
           notificationStyle.notificationOptionWrapper,
-          {backgroundColor: color.lightSkyBlue, borderColor: color.grey},
+          {backgroundColor: color.lightGrey, borderColor: color.grey},
         ]}>
         <View
           style={[

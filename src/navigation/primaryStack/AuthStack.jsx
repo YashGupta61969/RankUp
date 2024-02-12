@@ -1,42 +1,68 @@
 import {View, Text, SafeAreaView} from 'react-native';
-import React, { useEffect, useRef, useState } from 'react';
+import React, {useEffect, useState} from 'react';
 import {createNativeStackNavigator} from '@react-navigation/native-stack';
 import {authRoutes} from '../../constants/routes';
 import Login from '../../screens/auth/login/Login';
 import Signup from '../../screens/auth/signup/Signup';
 import SplashScreen from '../../screens/splashScreen/SplashScreen';
+import OnboardingScreenOne from '../../screens/auth/onboarding/OnboardingScreenOne';
+import OnboardingScreenThree from '../../screens/auth/onboarding/OnboardingScreenThree';
+import OnboardingScreenTwo from '../../screens/auth/onboarding/OnboardingScreenTwo';
+import AsyncStorage from '@react-native-async-storage/async-storage';
 
 const Stack = createNativeStackNavigator();
 const AuthStack = () => {
-//  const [splashTimer, setSplashTimer] = useState(true);
+  const [isFirstLaunched, setIsFirstLaunched] = useState(null);
 
-//   useEffect(() => {
-//     const timer = setTimeout(() => {
-//       setSplashTimer(false);
-//     }, 2000);
+  
+  useEffect(() => {
+    AsyncStorage.getItem('alreadyLaunched').then(value => {
+      if (value == null) {
+        AsyncStorage.setItem('alreadyLaunched', 'true');
+        setIsFirstLaunched(true);
+      } else {
+        setIsFirstLaunched(false);
+      }
+    });
+  }, []);
 
-//     return () => clearTimeout(timer);
-//   }, []);
+  if (isFirstLaunched === null) {
+    return null;
+  } else if (isFirstLaunched === true) {
+    return (
+      <SafeAreaView style={{flex: 1}}>
+        <Stack.Navigator screenOptions={{headerShown: false}}>
+          <Stack.Screen
+            name={authRoutes.OnBoardingOne}
+            component={OnboardingScreenOne}
+          />
+          <Stack.Screen
+            name={authRoutes.OnBoardingTwo}
+            component={OnboardingScreenTwo}
+            options={{animation: 'slide_from_right'}}
+          />
+          <Stack.Screen
+            name={authRoutes.OnBoardingThree}
+            component={OnboardingScreenThree}
+            options={{animation: 'slide_from_right'}}
+          />
+          <Stack.Screen name={authRoutes.Login} component={Login} />
+          <Stack.Screen name={authRoutes.Signup} component={Signup} />
+        </Stack.Navigator>
+      </SafeAreaView>
+    );
+  } else {
+    return (
+      <SafeAreaView style={{flex: 1}}>
+        <Stack.Navigator screenOptions={{headerShown: false}}>
+          <Stack.Screen name={authRoutes.Login} component={Login} />
+          <Stack.Screen name={authRoutes.Signup} component={Signup} />
+        </Stack.Navigator>
+      </SafeAreaView>
+    );
+  }
 
-//   if (splashTimer) {
-//     return <SplashScreen />;
-//   }
-// CheckToken
-
-
-
-
-  return (
-    <SafeAreaView style={{flex: 1}}>
-      <Stack.Navigator screenOptions={{headerShown: false}}>
-        <Stack.Screen name={authRoutes.Login} component={Login} />
-      <Stack.Screen name={authRoutes.Signup} component={Signup} />
-        {/* <Stack.Screen name={authRoutes.ForgotPassword} component={ForgotPassword} />
-      <Stack.Screen name={authRoutes.VerifyEmail} component={VerifyEmail} />
-      <Stack.Screen name={authRoutes.ResetPassword} component={ResetPassword} /> */}
-      </Stack.Navigator>
-    </SafeAreaView>
-  );
+  
 };
 
 export default AuthStack;

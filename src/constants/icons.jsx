@@ -31,6 +31,7 @@ import DeleteIcon from "../assets/icons/Delete.svg"
 import UserIcon from "../assets/icons/User.svg"
 import NotificationIcon from "../assets/icons/bell.svg"
 import Settings from "../assets/icons/dark_settings.svg"
+import Support from "../assets/icons/Call_Chat_Rounded.svg"
 import TermsPolicy from "../assets/icons/terms_policy.svg"
 import Logout from "../assets/icons/logout.svg"
 import TopArrow from "../assets/icons/Alt Arrow Up.svg"
@@ -77,5 +78,6 @@ export const icons = {
     DeleteIcon,
     MergedIcon,
     DeleteWhiteIcon,
-    crossIcon
+    crossIcon,
+    Support
 }

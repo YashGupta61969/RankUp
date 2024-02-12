@@ -47,6 +47,7 @@ const SettingItem = ({
         </View>
       ) : null}
         {/* {switchValue === false ? <icons.RightArrow width={23} height={23} />:<icons.RightArrowLight width={23} height={23} />} */}
+        <icons.RightArrow width={20} height={20}/>
       
     </TouchableOpacity>
   );

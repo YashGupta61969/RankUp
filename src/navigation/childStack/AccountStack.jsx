@@ -18,6 +18,7 @@ import ConfirmPhoneNumber from '../../screens/confirmPhoneNumber/ConfirmPhoneNum
 import TwoFAuthentication from '../../screens/twoFAuthentication/TwoFAuthentication';
 import SmsAuthentication from '../../screens/smsAuthentication/SmsAuthentication';
 import ChangePassword from '../../screens/changePassword/ChangePassword';
+import DarkMode from '../../screens/darkMode/DarkMode';
 
 
 
@@ -41,7 +42,7 @@ const AccountStack = () => {
     <Stack.Screen name={accountRoutes.ChangePassword} component={ChangePassword} />
     <Stack.Screen name={accountRoutes.TwoFAuthentication} component={TwoFAuthentication} />
     <Stack.Screen name={accountRoutes.SMSAuthentication} component={SmsAuthentication} />
-    {/* <Stack.Screen name={accountRoutes.DarkMode} component={DarkMode} /> */}
+    <Stack.Screen name={accountRoutes.DarkMode} component={DarkMode} />
     
   </Stack.Navigator>
   )

@@ -67,7 +67,7 @@ const BottomStack = () => {
               ),
           }}
         />
-        <Tab.Screen
+        {/* <Tab.Screen
           name={appRoutes.Forum}
           component={Forum}
           options={{
@@ -78,7 +78,7 @@ const BottomStack = () => {
                 <icons.InActiveForum width={40} height={40} />
               ),
           }}
-        />
+        /> */}
         <Tab.Screen
           name={appRoutes.Account}
           component={AccountStack}

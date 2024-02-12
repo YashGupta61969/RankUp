@@ -19,7 +19,7 @@ const CookiesPolicy = () => {
       <ScrollView
         style={[
           cookiesPolicyStyle.detailWrapper,
-          {backgroundColor: colors.screenCard, borderColor: color.grey},
+          {backgroundColor: color.lightGrey, borderColor: color.grey},
         ]}>
         <Text style={[cookiesPolicyStyle.detailHeading, {color: color.lightBlack}]}>
           Terms and Conditions

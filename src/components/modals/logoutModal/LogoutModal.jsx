@@ -14,36 +14,30 @@ import Loader from '../../loader/Loader';
 import {toast} from '../../../utils/toast';
 import {color} from '../../../constants/colors';
 import {logout} from '../../../data/services/authApi';
+import {authRoutes} from '../../../constants/routes';
+import AuthStack from '../../../navigation/primaryStack/AuthStack';
+import AppStack from '../../../navigation/primaryStack/AppStack';
 
 const LogoutModal = ({open, closeModal}) => {
   const dispatch = useDispatch();
   const [loading, setLoading] = useState(false);
   const {colors} = useTheme();
-  const {navigation} = useNavigation();
+  const navigation = useNavigation();
   //   handleLogOut
 
   const handleLogout = async () => {
     try {
       setLoading(true);
       const {data} = await logout();
-      console.log('data', data);
       if (data) {
-        dispatch(authToken(null));
         await AsyncStorage.clear();
+        dispatch(authToken(null));
+        await AsyncStorage.setItem('alreadyLaunched', 'false');
       }
-      // navigation.dispatch(
-      //   CommonActions.reset({
-      //     index: 0,
-      //     routes: [{ name: 'BottomStack' }],
-      //   })
-      // );
-      // dispatch(switchResponse(false));
-      // dispatch(setIsEnabled(false));
       setLoading(false);
     } catch (error) {
       setLoading(false);
       closeModal();
-      // toast({type:"error",text1:error.response.data.detail})
     }
   };
 

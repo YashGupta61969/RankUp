@@ -67,7 +67,7 @@ const FAQs = () => {
           return (
             <View
               key={index}
-              style={[faqsStyle.boxMain, {borderColor: colors.cardBorder}]}>
+              style={[faqsStyle.boxMain, {borderColor: color.grey,backgroundColor:color.lightGrey}]}>
               <View style={[faqsStyle.boxMainTop]}>
                 <Text style={[faqsStyle.headingText, {color: colors.text}]}>
                   {item.title}

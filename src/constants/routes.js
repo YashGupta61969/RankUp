@@ -1,4 +1,7 @@
 export const authRoutes = {
+  OnBoardingOne:"OnBoardingOne",
+  OnBoardingTwo:"OnBoardingTwo",
+  OnBoardingThree:"OnBoardingThree",
   Signup:"Signup",
   Login:"Login"
 }
