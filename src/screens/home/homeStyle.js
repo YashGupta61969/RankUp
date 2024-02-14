@@ -24,7 +24,7 @@ export const homeStyle = StyleSheet.create({
     height: verticalScale(40),
     width: horizontalScale(48),
     borderRadius: moderateScale(30),
-    overflow:"hidden"
+    overflow: 'hidden',
   },
   userText: {
     fontFamily: fonts.semiBold,
@@ -46,6 +46,7 @@ export const homeStyle = StyleSheet.create({
     paddingVertical: verticalScale(10),
     borderRadius: moderateScale(12),
     paddingHorizontal: horizontalScale(10),
+    marginVertical: verticalScale(20),
   },
   opbText: {
     fontFamily: fonts.regular,
@@ -53,16 +54,33 @@ export const homeStyle = StyleSheet.create({
     fontSize: RFValue(sizes.p3, 667),
     width: '88%',
   },
+  buttonWrapper: {
+    borderWidth: 0.5,
+    // height:280,
+    borderRadius: moderateScale(15),
+    borderColor: color.darkSkyBlue,
+    flexDirection: 'column',
+    justifyContent: 'space-evenly',
+    alignItems: 'center',
+  },
+
   buttonView: {
     flexDirection: 'row',
     alignItems: 'center',
     justifyContent: 'space-between',
-    marginTop: verticalScale(30),
+    marginTop: verticalScale(10),
+    width: '90%',
+  },
+  buttonWrapperTopText: {
+    fontFamily: fonts.semiBold,
+    fontSize: RFValue(sizes.h6, 667),
+    color: color.darkViolet,
+    textAlign: 'center',
   },
   buttonMain: {
     borderWidth: 1,
     borderColor: color.darkSkyBlue,
-    width: '48%',
+    width: '47%',
     height: verticalScale(100),
     flexDirection: 'column',
     alignItems: 'center',

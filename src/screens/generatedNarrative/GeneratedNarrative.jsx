@@ -2,7 +2,7 @@ import {View, Text, ScrollView, TouchableOpacity} from 'react-native';
 import React, {useState} from 'react';
 import {generatedNarrativeStyle} from './generatedNarrativeStyle';
 import ChildStackHeader from '../../components/navigation/childStackHeader/ChildStackHeader';
-import {homeRoutes, recallRoutes} from '../../constants/routes';
+import {appRoutes, childStack, homeRoutes, recallRoutes} from '../../constants/routes';
 import {useTheme} from '@react-navigation/native';
 import CustomCheckBox from '../../components/common/customCheckBox/CustomCheckBox';
 import {color} from '../../constants/colors';
@@ -16,6 +16,8 @@ import GradientButton from '../../components/buttons/GradientButton';
 import Loader from '../../components/loader/Loader';
 
 const GeneratedNarrative = ({route, navigation}) => {
+
+  console.log("rute",route.params.type)
   const [loading, setLoading] = useState(false);
   const [selectedBullets, setSelectedBullets] = useState([]);
   const [selectedBulletsValue, setSelectedBulletsValue] = useState([]);
@@ -33,24 +35,27 @@ const GeneratedNarrative = ({route, navigation}) => {
 
 
   // Submit EPR
-console.log("route.",route.data)
 
   const handelSubmitEpr = async () => {
     const requiredEprData = {
       title: route.params.title,
       category: modifiedText,
-      bullets: selectedBullets,
+      bullets: selectedBulletsValue,
       api_response: narrative,
+      type:route.params.type
     };
 
     try {
       setLoading(true)
-     const data =  await submitEpr(requiredEprData);
-     console.log("data",data)
-      navigation.navigate(homeRoutes.ViewNarrative,{route,selectedBulletsValue})
+     const {data} =  await submitEpr(requiredEprData);
+     toast({type:"success",text1:data.detail})
+     setTimeout(() => {
+       navigation.navigate(childStack.HomeStack)
+     }, 2000);
+      // navigation.navigate(homeRoutes.ViewNarrative,{data,selectedBulletsValue})
       setLoading(false)
     } catch (error) {
-      console.log("error",error.response.data)
+      console.log("error",error.response)
       setLoading(false);
       toast({type: 'error', text1: error.response.data.detail});
     }

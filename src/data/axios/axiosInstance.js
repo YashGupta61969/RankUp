@@ -11,7 +11,7 @@ const instance = axios.create({
   headers: {
     'Content-Type': 'application/json',
   },
-  timeout: 60000,
+  timeout: 20000,
   timeoutErrorMessage: 'Request Timed Out',
 });
 
@@ -37,9 +37,10 @@ instance.interceptors.response.use(
     
   },
   async function (error) {
+    console.log("errorinstance",error)
     const originalRequest = error.config;
     if (error.response.status === 401 && originalRequest.url !== 'login/' && originalRequest.url !== "signup/") {
-      const userRefreshToken = await AsyncStorage.getItem('RefreshToken');
+      const userRefreshToken = await AsyncStorage.getItem('refreshToken');
       try {
         const resp = await refreshToken(userRefreshToken);
       const access_token = resp.data.access;

@@ -25,7 +25,7 @@ import {CreateEpr} from '../../data/services/EprApi';
 import Loader from '../../components/loader/Loader';
 import {toast} from '../../utils/toast';
 
-const EPR = ({navigation}) => {
+const EPR = ({navigation,route}) => {
   // States
 
   const [categoryValue, setCategoryValue] = useState(null);
@@ -38,8 +38,9 @@ const EPR = ({navigation}) => {
   const [checked, setChecked] = useState(false);
   const {colors} = useTheme();
   const {navigate} = useNavigation();
-
+  const {type} = route.params 
   // padding
+
 
   const padding = Platform.OS === 'ios' ? 14 : 9;
   const multiLinePadding = Platform.OS === 'ios' ? 90 : 10;
@@ -81,6 +82,7 @@ const EPR = ({navigation}) => {
         data,
         title,
         categoryitem,
+        type
       });
     } catch (error) {
       setLoading(false);
@@ -90,7 +92,7 @@ const EPR = ({navigation}) => {
 
   return (
     <View style={[eprStyle.oprMain, {backgroundColor: color.white}]}>
-      <ChildStackHeader text={homeRoutes.EPB} textColor={color.lightBlack} />
+      <ChildStackHeader text={type === "epb" ? homeRoutes.EPB:homeRoutes.OPB} textColor={color.lightBlack} />
       <ScrollView
         automaticallyAdjustKeyboardInsets={true}
         showsVerticalScrollIndicator={false}>

@@ -1,57 +1,82 @@
 import {View, Text, TouchableOpacity, ScrollView} from 'react-native';
-import React from 'react';
+import React, {useEffect, useState} from 'react';
 import {opbStyle} from './opbStyle';
 import ChildStackHeader from '../../components/navigation/childStackHeader/ChildStackHeader';
 import {narrativesRoutes} from '../../constants/routes';
 import {color} from '../../constants/colors';
 import LinearGradient from 'react-native-linear-gradient';
+import {deleteSingleNarrative, getSingleNarrativeDetail} from '../../data/services/EprApi';
+import {toast} from '../../utils/toast';
+import Loader from '../../components/loader/Loader';
+import { deleteNarrativeModalStyle } from '../../components/modals/deleteNarrativesModal/deleteNarrativesModalStyle.';
 
-const OPB = () => {
+const OPB = ({route,navigation}) => {
+  const [loading, setLoading] = useState(false);
+  const [singleData, setSingleData] = useState('');
+  const [bulletData, setBulletData] = useState([]);
+  const {id} = route.params;
+
+  useEffect(() => {
+    handleGetNarrativeDetail();
+  }, []);
+
+  const handleGetNarrativeDetail = async () => {
+    try {
+      setLoading(true);
+      const {data} = await getSingleNarrativeDetail(id);
+      setSingleData(data);
+      setBulletData(data?.bullets);
+      setLoading(false);
+    } catch (error) {
+      setLoading(false);
+      toast({type: 'error', text1: error.response.data.detail});
+    }
+  };
+
+
+
+// Delete Narrative
+
+const handleDeleteNarrative = async()=>{
+  try {
+ const {data}=  await deleteSingleNarrative(id);
+ console.log("Data",data)
+ if(data){
+   navigation.goBack()
+ }
+  } catch (error) {
+    toast({type:"error",text1:error.response.data.detail})
+  }
+}
+
+
+
   return (
     <View style={opbStyle.opbMain}>
       <ChildStackHeader
         text={narrativesRoutes.OPB}
         textColor={color.lightBlack}
       />
+      <Loader loading={loading} />
       <ScrollView
         showsVerticalScrollIndicator={false}
         style={opbStyle.topOuterView}>
         <View style={opbStyle.topInnerView}>
-          <Text style={opbStyle.opbTitleHeading}>Duty Title</Text>
+          <Text style={opbStyle.opbTitleHeading}>{singleData.title}</Text>
           <Text style={opbStyle.opbTitleDescription}>
-            Ut enim ad minim veniam, quis nostrud exeation ullamco labois nisi
-            ut aliquip ex ea comodo con Ut enm ad minim veniam, quis nostrud
-            exercitation ullamco laboris nisi ut aliquip ex ea commodo con Ut
-            enim ad minim veniam, quis nostrud exeation ullamco labois nisi ut
-            aliquip ex ea comodo con Ut enm ad minim veniam, quis nostrud
-            exercitation ullamco laboris nisi ut aliquip ex ea commodo con Ut
-            enim ad minim veniam, quis nostrud exeation ullamco labois nisi ut
-            aliquip ex ea comodo con Ut enm ad minim veniam, quis nostrud
-            exercitation ullamco laboris nisi ut aliquip ex ea commodo con Ut
-            enim ad minim veniam, quis nostrud exeation ullamco labois nisi ut
-            aliquip ex ea comodo con Ut enm ad minim veniam, quis nostrud
-            exercitation ullamco laboris nisi ut aliquip ex ea commodo con Ut
-            enim ad minim veniam, quis nostrud exeation ullamco labois nisi ut
-            aliquip ex ea comodo con Ut enm ad minim veniam, quis nostrud
-            exercitation ullamco laboris nisi ut aliquip ex ea commodo con
+            {singleData?.api_response}
           </Text>
         </View>
 
         <View style={opbStyle.bottomView}>
-          <View style={opbStyle.bottomViewItem}>
-            <View style={opbStyle.dotView} />
-            <Text style={opbStyle.bottomViewText}>
-              Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
-              eiusmod tempor incididunt ut labore{' '}
-            </Text>
-          </View>
-          <View style={[opbStyle.bottomViewItem, {borderBottomWidth: 0}]}>
-            <View style={opbStyle.dotView} />
-            <Text style={opbStyle.bottomViewText}>
-              Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
-              eiusmod tempor incididunt ut labore{' '}
-            </Text>
-          </View>
+          {bulletData.map((item, index) => {
+            return (
+              <View key={index} style={opbStyle.bottomViewItem}>
+                <View style={opbStyle.dotView} />
+                <Text style={opbStyle.bottomViewText}>{item}</Text>
+              </View>
+            );
+          })}
         </View>
 
         <View style={opbStyle.buttonView}>
@@ -67,11 +92,11 @@ const OPB = () => {
                 <Text style={opbStyle.buttonText}>Publish To Forum</Text>
               </LinearGradient>
             </TouchableOpacity>
-            <TouchableOpacity activeOpacity={1} style={opbStyle.deleteButton}>
+            <TouchableOpacity onPress={()=>handleDeleteNarrative(id)} activeOpacity={1} style={opbStyle.deleteButton}>
               <Text style={opbStyle.deleteText}>Delete Narrative</Text>
             </TouchableOpacity>
           </View>
-          <TouchableOpacity activeOpacity={1} style={opbStyle.goBackButtonView}>
+          <TouchableOpacity onPress={()=>navigation.goBack()} activeOpacity={1} style={opbStyle.goBackButtonView}>
             <Text style={opbStyle.goBackButtonText}>Go back</Text>
           </TouchableOpacity>
         </View>

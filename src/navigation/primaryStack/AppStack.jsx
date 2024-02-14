@@ -21,7 +21,8 @@ const AppStack = () => {
   return (
     <View style={{flex: 1}}>
       <NavigationContainer>
-        {token ? <BottomStack/>:<AuthStack/>}
+        {/* {token ? <BottomStack/>:<AuthStack/>} */}
+        <BottomStack/>
       </NavigationContainer>
     </View>
   );

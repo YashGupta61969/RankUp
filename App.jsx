@@ -26,31 +26,31 @@ const [isConnected, setIsConnected] = useState(true);
         setTimeout(() => {
           SplashScreen.hide()
         }, 50);
-        console.log("hello");
       } catch (error) {
         toast({type:"error",text1:"Error while getting the token"})
       }
     };
     checkToken();
+
+    // setTimeout(() => {
+    //   const trialFunction = async()=>{
+    //     try {
+    //       await AsyncStorage.setItem("Token","eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNzAyOTg3NTI0LCJpYXQiOjE3MDI5MDExMjQsImp0aSI6ImY1MmM0ODhmZmFmMjRjMzFhN2JhNmRmZGQzNzY0ZmM0IiwidXNlcl9pZCI6MjI5fQ.8jsYUakwCqikiaTHEb2CPwBSWavtCrmzKzLHhLm7Tog")
+    //       dispatch(authToken("eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNzAyOTg3NTI0LCJpYXQiOjE3MDI5MDExMjQsImp0aSI6ImY1MmM0ODhmZmFmMjRjMzFhN2JhNmRmZGQzNzY0ZmM0IiwidXNlcl9pZCI6MjI5fQ.8jsYUakwCqikiaTHEb2CPwBSWavtCrmzKzLHhLm7Tog"))
+    //     } catch (error) {
+    //       console.log("error",error)
+    //     }
+    //   }
+    //   trialFunction()
+    // }, 15000);
   }, [])
   
 
 
-  // useEffect(() => {
-  //   unsubscribe()
-  // }, [])
   
+
+
   
-  // const unsubscribe = NetInfo.addEventListener((state)=>{
-  //   if(state.isConnected === false){
-  //     Alert.alert("Not internet","Please reconnect to the Internet",[{
-  //       text:"Reload App",
-  //       onPress:()=>RNRestart.restart()
-  //     }])
-  //   }else if(state.isConnected === true){
-  //     console.log("Connected")
-  //   }
-  // })
   
 
   useEffect(() => {

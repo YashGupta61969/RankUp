@@ -4,12 +4,13 @@ import {
   TouchableOpacity,
   ScrollView,
   Touchable,
+  FlatList,
 } from 'react-native';
-import React, {useState} from 'react';
+import React, {useEffect, useRef, useState} from 'react';
 import {color} from '../../constants/colors';
 import LinearGradient from 'react-native-linear-gradient';
 import {icons} from '../../constants/icons';
-import {horizontalScale, verticalScale} from '../../constants/dimension';
+import {horizontalScale, moderateScale, verticalScale} from '../../constants/dimension';
 import {showModal} from '@whitespectre/rn-modal-presenter';
 import NarrativeSheet from '../../components/bottomSheets/narrativesSheet/NarrativeSheet';
 import {narrativesStyle} from './narrativesStyle';
@@ -18,48 +19,53 @@ import {narrativesRoutes} from '../../constants/routes';
 import MergedModal from '../../components/modals/mergedModal/MergedModal';
 import {toast} from '../../utils/toast';
 import DeleteNarrativesModal from '../../components/modals/deleteNarrativesModal/DeleteNarrativesModal';
+import { fonts } from '../../constants/fonts';
+import { getEprBulletsCategory } from '../../data/services/EprApi';
+import Loader from '../../components/loader/Loader';
 
 const Narratives = ({navigation}) => {
-  const [active, setActive] = useState(1);
   const [selectedBullets, setSelectedBullets] = useState([]);
   const [selectedBulletsValue, setSelectedBulletsValue] = useState([]);
+  const [jobPerformance, setJobPerformance] = useState([]);
+  const [leadershipData, setLeadershipData] = useState([]);
+  const [wholeAirmanData, setWholeAirmanData] = useState([]);
   const [allowCheckBox, setAllowCheckBox] = useState(false);
   const [narrativeButtonText, setNarrativeButtonText] = useState('');
+  const [selectedButton, setSelectedButton] = useState(1)
+  const [loading, setLoading] = useState(false)
   const [open, setOpen] = useState(false);
+  const flatListRef = useRef(null);
+
+
   const buttonArray = [
-    {id: 1, value: 'OPB'},
-    {id: 2, value: 'EPB'},
+    {id: 1, value: 'Job Performance'},
+    {id: 2, value: 'Whole Airman Concept'},
+    {id: 3, value: 'Leadership/Fellowship/Impact'},
+    {id: 4, value: 'Merged'},
   ];
 
 
 
-  const dutyTitleArray = [
-    {
-      id: 1,
-      value:
-        'Lorem ipsum dolor sit amet consectetur, adipisicing elit. Aperiam modi cumque fugiat ad ratione eveniet, quos impedit, ab aspernatur beatae doloremque in sint accusamus ea assumenda dolorum corporis amet maiores!',
-    },
-    {
-      id: 2,
-      value:
-        'Lorem ipsum dolor sit amet consectetur, adipisicing elit. Aperiam modi cumque fugiat ad ratione eveniet, quos impedit, ab aspernatur beatae doloremque in sint accusamus ea assumenda dolorum corporis amet maiores!',
-    },
-    {
-      id: 3,
-      value:
-        'Lorem ipsum dolor sit amet consectetur, adipisicing elit. Aperiam modi cumque fugiat ad ratione eveniet, quos impedit, ab aspernatur beatae doloremque in sint accusamus ea assumenda dolorum corporis amet maiores!',
-    },
-    {
-      id: 4,
-      value:
-        'Lorem ipsum dolor sit amet consectetur, adipisicing elit. Aperiam modi cumque fugiat ad ratione eveniet, quos impedit, ab aspernatur beatae doloremque in sint accusamus ea assumenda dolorum corporis amet maiores!',
-    },
-  ];
+  // useEffect(() => {
+  //   // handelGetEpr()
+  //   handleGetWholeAirmanConcept();
+  //   handleGetJobPerformance();
+  //   handleGetLeadership();
+  // }, []);
 
-  // change Tab
+
+
+  
+
+  // change Tab and handle Animation
 
   const handleChangeTab = id => {
-    setActive(id);
+    setSelectedButton(id);
+    const clickedIndex = buttonArray.findIndex(item => item.id === id);
+
+    const targetIndex = Math.max(0, clickedIndex);
+
+    flatListRef.current.scrollToIndex({animated: true, index: targetIndex});
   };
 
   // Open Narratives Option
@@ -118,6 +124,61 @@ const Narratives = ({navigation}) => {
     }
   }
 
+
+// Get Data From Api's
+
+
+// Get whole Airman Concept
+const handleGetWholeAirmanConcept = async () => {
+  const category = 'whole_airman_concept';
+  try {
+    setLoading(true);
+    const {data} = await getEprBulletsCategory(category);
+    setWholeAirmanData(data?.results);
+    setLoading(false);
+  } catch (error) {
+    setLoading(false);
+    toast({type: 'error', text1: error.response.data.detail});
+  }
+};
+
+// Get Job_performance Concept
+
+const handleGetJobPerformance = async () => {
+  const category = 'job_performance';
+  try {
+    const {data} = await getEprBulletsCategory(category);
+    setJobPerformance(data?.results);
+  } catch (error) {
+    toast({type: 'error', text1: error.response.data.detail});
+  }
+};
+
+// Get Leadership Impact
+
+const handleGetLeadership = async () => {
+  const category = 'leadership_fellowship_impact';
+  try {
+    const {data} = await getEprBulletsCategory(category);
+    setLeadershipData(data?.results);
+  } catch (error) {
+    toast({type: 'error', text1: error.response.data.detail});
+  }
+};
+
+
+// Check Condition
+
+    
+const iteratableArray =
+    selectedButton === 1
+      ? jobPerformance
+      : selectedButton === 2
+      ? wholeAirmanData
+      : leadershipData;
+
+
+
   return (
     <View style={narrativesStyle.narrativesMain}>
       <NarrativeSheet
@@ -126,49 +187,72 @@ const Narratives = ({navigation}) => {
         setAllowCheckBox={setAllowCheckBox}
         setNarrativeButtonText={setNarrativeButtonText}
       />
+      <Loader loading={loading}/>
+
       <Text style={narrativesStyle.narrativesMainText}>Narratives</Text>
       <ScrollView
         showsVerticalScrollIndicator={false}
         style={narrativesStyle.narrativesTopView}>
         <View style={narrativesStyle.OprEprView}>
-          {buttonArray.map((item, index) => {
+        <FlatList
+          ref={flatListRef}
+          scrollToOverflowEnabled
+          showsHorizontalScrollIndicator={false}
+          contentContainerStyle={{
+            marginTop: verticalScale(6),
+          }}
+          scrollEnabled={true}
+          horizontal={true}
+          data={buttonArray}
+          keyExtractor={item => item?.id.toString()}
+          renderItem={({item, index}) => {
             return (
               <TouchableOpacity
                 onPress={() => handleChangeTab(item.id)}
-                key={index}
-                style={[
-                  narrativesStyle.tabView,
-                  {
-                    backgroundColor:
-                      item.id === active ? color.darkSkyBlue : null,
-                  },
-                ]}>
+                style={{
+                  borderWidth: 1.5,
+                  borderColor: color.darkSkyBlue,
+                  paddingHorizontal: horizontalScale(15),
+                  paddingVertical: verticalScale(8),
+                  marginRight: horizontalScale(4),
+                  borderRadius: moderateScale(5),
+                  backgroundColor: item.id
+                    ? selectedButton === item.id 
+                      ? color.darkSkyBlue
+                      : color.lightGrey
+                    : color.lightGrey,
+                }}>
                 <Text
-                  style={[
-                    narrativesStyle.tabText,
-                    {color: item.id === active ? color.white : color.light},
-                  ]}>
-                  {item.value}
+                  style={{
+                    color: item.id
+                      ? selectedButton === item.id
+                        ? color.white
+                        : color.darkSkyBlue
+                      : color.lightGrey,
+                    fontFamily: fonts.medium,
+                  }}>
+                  {item?.value}
                 </Text>
               </TouchableOpacity>
             );
-          })}
+          }}></FlatList>
         </View>
         <TouchableOpacity
           onPress={handleOpenTab}
           style={narrativesStyle.dotViewMain}>
           <icons.DotView width={25} height={25} />
-        </TouchableOpacity>
+        </TouchableOpacity>     
 
-        {dutyTitleArray.map((item, index) => {
+
+        {iteratableArray.map((item, index) => {
           return (
-            <View
-              onPress={() => navigation.navigate(narrativesRoutes.OPB)}
+            <TouchableOpacity
+              onPress={() => navigation.navigate(narrativesRoutes.OPB,{id:item.id})}
               key={index}
               style={narrativesStyle.dutyTitleWrapper}>
               <View
                 style={{flexDirection: 'row', justifyContent: 'space-between'}}>
-                <Text style={narrativesStyle.dutyTitleHeading}>Duty Title</Text>
+                <Text style={narrativesStyle.dutyTitleHeading}>{item?.title}</Text>
                 {allowCheckBox ? (
                   <View style={{marginRight: horizontalScale(10)}}>
                     <CustomCheckBox
@@ -182,9 +266,9 @@ const Narratives = ({navigation}) => {
                 ) : null}
               </View>
               <Text style={narrativesStyle.dutyTitleDescription}>
-                {item.value}
+                {item.api_response}
               </Text>
-            </View>
+            </TouchableOpacity>
           );
         })}
         {narrativeButtonText === 'delete' ? (

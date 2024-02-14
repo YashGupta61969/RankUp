@@ -9,7 +9,8 @@ import InActiveNarratives from "../assets/icons/inActive_narratives.svg"
 import InActiveMerged from "../assets/icons/inActive_merged.svg"
 import InActiveForum from "../assets/icons/inActive_forum.svg"
 import InActiveAccount from "../assets/icons/inActive_account.svg"
-
+import ActiveSupport from "../assets/icons/Active_support.svg"
+import InActiveSupport from "../assets/icons/Support.svg"
 // Home Tab Related Icon
 import InfoIcon from "../assets/icons/info_button.svg"
 import AddOPB from "../assets/icons/Add_opb.svg"
@@ -18,6 +19,7 @@ import LeftArrow from "../assets/icons/leftArrow.svg"
 import DropDown from "../assets/icons/down-arrow.svg"
 import SplashLogo from "../assets/icons/splash_logo.svg"
 import RightArrow from "../assets/icons/rightArrow.svg"
+
 
 // Narrative Icon
 import DeleteWhiteIcon from "../assets/icons/DeleteWhiteIcon.svg"
@@ -79,5 +81,7 @@ export const icons = {
     MergedIcon,
     DeleteWhiteIcon,
     crossIcon,
-    Support
+    Support,
+    ActiveSupport,
+    InActiveSupport
 }

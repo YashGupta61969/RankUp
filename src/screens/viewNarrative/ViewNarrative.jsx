@@ -7,12 +7,11 @@ import {color} from '../../constants/colors';
 const ViewNarrative = ({route}) => {
   const {data} = route.params;
  const {selectedBulletsValue} = route.params
-  console.log('view', route);
   return (
     <View style={viewNarrativeStyle.viewNarrativeMain}>
       <ChildStackHeader text="View Narrative" textColor={color.black} />
       <ScrollView  showsVerticalScrollIndicator={false}>
-        <View style={viewNarrativeStyle.summaryMainView}>
+        {/* <View style={viewNarrativeStyle.summaryMainView}>
           <View style={viewNarrativeStyle.summaryTop}>
             <Text style={viewNarrativeStyle.summaryText}>OPR Summary</Text>
             <View style={viewNarrativeStyle.timeView}>
@@ -32,9 +31,12 @@ const ViewNarrative = ({route}) => {
               con
             </Text>
           </View>
+        </View> */}
+        <View>
+          <Text>{}</Text>
+          <Text>12:34am | 12/8/2021</Text>
         </View>
 
-        <Text>Bullets</Text>
         <View style={viewNarrativeStyle.bulletPointsView}>
           <FlatList
           scrollEnabled={false}

@@ -1,4 +1,5 @@
 export const authRoutes = {
+  Onboarding:"Onboarding",
   OnBoardingOne:"OnBoardingOne",
   OnBoardingTwo:"OnBoardingTwo",
   OnBoardingThree:"OnBoardingThree",
@@ -9,8 +10,9 @@ export const authRoutes = {
 export const appRoutes = {
   Home: 'Home',
   Narratives: 'Narratives',
-  Merged: 'Merged',
-  Forum: 'Forum',
+  // Merged: 'Merged',
+  // Forum: 'Forum',
+  Support:"Support",
   Account: 'Account',
 };
 
@@ -21,6 +23,7 @@ export const narrativesRoutes={
 
 export const homeRoutes = {
   EPB: 'EPB',
+  OPB:"OPB",
   GeneratedNarrative: 'Generated Narrative',
   ViewNarrative:"View Narrative"
 };

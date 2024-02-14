@@ -10,6 +10,7 @@ import {color} from '../../constants/colors';
 import HomeStack from '../childStack/HomeStack';
 import AccountStack from '../childStack/AccountStack';
 import NarrativeStack from '../childStack/NarrativeStack';
+import Support from '../../screens/support/Support';
 
 const Tab = createBottomTabNavigator();
 const BottomStack = () => {
@@ -56,14 +57,14 @@ const BottomStack = () => {
           }}
         />
         <Tab.Screen
-          name={appRoutes.Merged}
-          component={Merged}
+          name={appRoutes.Support}
+          component={Support}
           options={{
             tabBarIcon: ({focused}) =>
               focused ? (
-                <icons.ActiveMerged width={80} height={50} />
+                <icons.ActiveSupport width={80} height={50} />
               ) : (
-                <icons.InActiveMerged width={40} height={40} />
+                <icons.InActiveSupport width={45} height={45} />
               ),
           }}
         />
